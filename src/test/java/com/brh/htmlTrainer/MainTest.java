@@ -9,27 +9,28 @@ import static org.junit.jupiter.api.Assertions.*;
 class MainTest {
 
     @Test
-    @DisplayName("Simple Addition should work")
+    @DisplayName("Addition")
     void testSum() {
-        assertEquals(10, Main.sum(4,6),
-              "Addition should work");
-
+        assertEquals( 10, Main.sum(4, 6), "Addition korrekt" );
     }
 
     @Test
-    @DisplayName("Simple Multiply should work")
     void testMultiply() {
-        assertEquals(20, Main.multiply(4, 5),
-                "Multiply should work");
+        assertEquals( 12, Main.multiply(2, 6), "Multiplikation korrekt" );
     }
 
     @RepeatedTest(5)
-    @DisplayName("Ensure correct handling of zero")
-    void testMultiplyWithZero(){
-        assertEquals(0, Main.multiply(0,5), "Multiply with zero");
-        assertEquals(0, Main.multiply(5,0), "Multiply with zero");
+    void testMultiplyZero(){
+        assertEquals( 0, Main.multiply(0,5), "Multiplikation mit 0");
+        assertEquals( 0, Main.multiply(5,0), "Multiplikation mit 0");
     }
 
 
+    @Test
+    void getNewCar() {
 
+        Car car = Main.getNewCar();
+        assertNotNull(car, "Nicht ungueltig");
+
+    }
 }
