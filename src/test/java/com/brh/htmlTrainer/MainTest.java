@@ -31,7 +31,6 @@ class MainTest {
 
         Car car = Main.getNewCar();
         assertNotNull(car, "Nicht ungueltig");
-
     }
 
     @Test
